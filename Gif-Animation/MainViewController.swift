@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // Reference : https://github.com/mayoff/uiimage-from-animated-gif
   }
   
   override func didReceiveMemoryWarning() {

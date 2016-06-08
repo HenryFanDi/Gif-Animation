@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8D5FAD51D07FA780017CAE0 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D5FAD41D07FA780017CAE0 /* UIImage+animatedGIF.m */; };
 		D8FDB7201D07099000BD2E81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FDB71F1D07099000BD2E81 /* AppDelegate.swift */; };
 		D8FDB7281D07099100BD2E81 /* Gif_Animation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8FDB7261D07099100BD2E81 /* Gif_Animation.xcdatamodeld */; };
 		D8FDB72A1D07099100BD2E81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8FDB7291D07099100BD2E81 /* Assets.xcassets */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D8D5FAD21D07FA760017CAE0 /* Gif-Animation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gif-Animation-Bridging-Header.h"; sourceTree = "<group>"; };
+		D8D5FAD31D07FA780017CAE0 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		D8D5FAD41D07FA780017CAE0 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
 		D8FDB71C1D07099000BD2E81 /* Gif-Animation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gif-Animation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FDB71F1D07099000BD2E81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8FDB7271D07099100BD2E81 /* Gif_Animation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gif_Animation.xcdatamodel; sourceTree = "<group>"; };
@@ -102,10 +106,13 @@
 				D8FDB71F1D07099000BD2E81 /* AppDelegate.swift */,
 				D8FDB7501D0709B200BD2E81 /* MainViewController.swift */,
 				D8FDB7511D0709B200BD2E81 /* MainViewController.xib */,
+				D8D5FAD31D07FA780017CAE0 /* UIImage+animatedGIF.h */,
+				D8D5FAD41D07FA780017CAE0 /* UIImage+animatedGIF.m */,
 				D8FDB7291D07099100BD2E81 /* Assets.xcassets */,
 				D8FDB72B1D07099100BD2E81 /* LaunchScreen.storyboard */,
 				D8FDB72E1D07099100BD2E81 /* Info.plist */,
 				D8FDB7261D07099100BD2E81 /* Gif_Animation.xcdatamodeld */,
+				D8D5FAD21D07FA760017CAE0 /* Gif-Animation-Bridging-Header.h */,
 			);
 			path = "Gif-Animation";
 			sourceTree = "<group>";
@@ -260,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8FDB7201D07099000BD2E81 /* AppDelegate.swift in Sources */,
+				D8D5FAD51D07FA780017CAE0 /* UIImage+animatedGIF.m in Sources */,
 				D8FDB7281D07099100BD2E81 /* Gif_Animation.xcdatamodeld in Sources */,
 				D8FDB7521D0709B200BD2E81 /* MainViewController.swift in Sources */,
 			);
@@ -395,10 +403,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Gif-Animation/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HenryFanDi.Gif-Animation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gif-Animation/Gif-Animation-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -406,10 +417,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Gif-Animation/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HenryFanDi.Gif-Animation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gif-Animation/Gif-Animation-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -478,6 +491,7 @@
 				D8FDB7491D07099100BD2E81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8FDB74A1D07099100BD2E81 /* Build configuration list for PBXNativeTarget "Gif-AnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +500,7 @@
 				D8FDB74C1D07099100BD2E81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8FDB74D1D07099100BD2E81 /* Build configuration list for PBXNativeTarget "Gif-AnimationUITests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +509,7 @@
 				D8FDB74F1D07099100BD2E81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
