@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D82E1EF81D09157000D41E99 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E1EF71D09157000D41E99 /* LoadingView.swift */; };
+		D85CEA6D1D0A428C000A930D /* loading_animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = D85CEA6C1D0A428C000A930D /* loading_animation.gif */; };
 		D8D5FAD51D07FA780017CAE0 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D5FAD41D07FA780017CAE0 /* UIImage+animatedGIF.m */; };
 		D8FDB7201D07099000BD2E81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FDB71F1D07099000BD2E81 /* AppDelegate.swift */; };
 		D8FDB7281D07099100BD2E81 /* Gif_Animation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8FDB7261D07099100BD2E81 /* Gif_Animation.xcdatamodeld */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		D82E1EF71D09157000D41E99 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		D85CEA6C1D0A428C000A930D /* loading_animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading_animation.gif; sourceTree = "<group>"; };
 		D8D5FAD21D07FA760017CAE0 /* Gif-Animation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gif-Animation-Bridging-Header.h"; sourceTree = "<group>"; };
 		D8D5FAD31D07FA780017CAE0 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		D8D5FAD41D07FA780017CAE0 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				D8FDB7501D0709B200BD2E81 /* MainViewController.swift */,
 				D8FDB7511D0709B200BD2E81 /* MainViewController.xib */,
 				D82E1EF71D09157000D41E99 /* LoadingView.swift */,
+				D85CEA6C1D0A428C000A930D /* loading_animation.gif */,
 				D8D5FAD31D07FA780017CAE0 /* UIImage+animatedGIF.h */,
 				D8D5FAD41D07FA780017CAE0 /* UIImage+animatedGIF.m */,
 				D8FDB7291D07099100BD2E81 /* Assets.xcassets */,
@@ -244,6 +247,7 @@
 			files = (
 				D8FDB72D1D07099100BD2E81 /* LaunchScreen.storyboard in Resources */,
 				D8FDB7531D0709B200BD2E81 /* MainViewController.xib in Resources */,
+				D85CEA6D1D0A428C000A930D /* loading_animation.gif in Resources */,
 				D8FDB72A1D07099100BD2E81 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
