@@ -79,6 +79,10 @@ extension UIViewController {
   
   func stopLoadingAnimation() {
     print("stopLoadingAnimation")
+    unowned let unownedSelf = self
+    UIView.animateWithDuration(0.3) {
+      unownedSelf.backgroundView?.alpha = 0.0
+    }
   }
   
   private func loadingAnimationView() -> UIView {
