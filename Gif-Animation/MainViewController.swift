@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
     // Gategory reference : https://github.com/mayoff/uiimage-from-animated-gif
     // Gif reference : http://www.huhmagazine.co.uk/9134/incredibly-satisfying-gifs-by-florian-de-looij
     
-//    stopLoadingAnimation()
+    stopIt()
   }
   
   override func viewDidAppear(animated: Bool) {
@@ -28,6 +28,17 @@ class MainViewController: UIViewController {
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
+  }
+  
+  // MARK: Private
+  
+  private func stopIt() {
+    let interval = 3.0
+    let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(interval * NSTimeInterval(NSEC_PER_SEC)))
+    unowned let unownedSelf = self
+    dispatch_after(delay, dispatch_get_main_queue()) { 
+      unownedSelf.stopLoadingAnimation()
+    }
   }
   
 }
