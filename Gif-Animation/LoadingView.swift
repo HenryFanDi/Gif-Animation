@@ -40,10 +40,28 @@ extension UIViewController {
         view?.layer.cornerRadius = 13.0
         self.loadingView = view
       }
-      return nil
+      return view
     }
     set(newValue) {
       objc_setAssociatedObject(self, &loadingViewKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+  }
+  
+  var animationView: UIImageView? {
+    get {
+      var view = objc_getAssociatedObject(self, &animationViewKey) as? UIImageView
+      if view == nil {
+        view = UIImageView(image: UIImage.animatedImageWithAnimatedGIFData(NSData.init(contentsOfFile: NSBundle.mainBundle().pathForResource("loading_animation", ofType: "gif")!)!))
+        view?.frame = CGRectMake(0.0, 0.0, 140.0, 140.0)
+        view?.backgroundColor = UIColor.clearColor()
+        view?.center = CGPointMake(CGRectGetWidth(loadingView!.frame) / 2.0, CGRectGetHeight(loadingView!.frame) / 2.0)
+        view?.contentMode = UIViewContentMode.ScaleAspectFit
+        self.animationView = view
+      }
+      return view
+    }
+    set(newValue) {
+      objc_setAssociatedObject(self, &animationViewKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
   }
   

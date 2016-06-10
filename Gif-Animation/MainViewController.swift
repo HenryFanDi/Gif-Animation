@@ -15,7 +15,8 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Reference : https://github.com/mayoff/uiimage-from-animated-gif
+    // Gategory reference : https://github.com/mayoff/uiimage-from-animated-gif
+    // Gif reference : http://www.huhmagazine.co.uk/9134/incredibly-satisfying-gifs-by-florian-de-looij
     
     startLoadingAnimation()
     stopLoadingAnimation()
