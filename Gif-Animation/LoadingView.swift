@@ -34,8 +34,8 @@ extension UIViewController {
     get {
       var view = objc_getAssociatedObject(self, &loadingViewKey) as? UIView
       if view == nil {
-        view = UIView.init(frame: CGRectMake(0.0, 0.0, 204.0, 167.0))
-        view?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.8)
+        view = UIView.init(frame: CGRectMake(0.0, 0.0, 200.0, 170.0))
+        view?.backgroundColor = UIColor.init(red: 38.0/255.0, green: 38.0/255.0, blue: 38.0/255.0, alpha: 1.0)
         view?.center = CGPointMake(CGRectGetWidth(UIScreen.mainScreen().bounds) / 2.0, CGRectGetHeight(UIScreen.mainScreen().bounds) / 2.0)
         view?.layer.cornerRadius = 13.0
         self.loadingView = view
@@ -52,10 +52,10 @@ extension UIViewController {
       var view = objc_getAssociatedObject(self, &animationViewKey) as? UIImageView
       if view == nil {
         view = UIImageView(image: UIImage.animatedImageWithAnimatedGIFData(NSData.init(contentsOfFile: NSBundle.mainBundle().pathForResource("loading_animation", ofType: "gif")!)!))
-        view?.frame = CGRectMake(0.0, 0.0, 140.0, 140.0)
+        view?.frame = CGRectMake(0.0, 0.0, 200.0, 170.0)
         view?.backgroundColor = UIColor.clearColor()
-        view?.center = CGPointMake(CGRectGetWidth(loadingView!.frame) / 2.0, CGRectGetHeight(loadingView!.frame) / 2.0)
         view?.contentMode = UIViewContentMode.ScaleAspectFit
+        view?.clipsToBounds = true
         self.animationView = view
       }
       return view
@@ -67,10 +67,24 @@ extension UIViewController {
   
   func startLoadingAnimation() {
     print("startLoadingAnimation")
+    let window = UIApplication.sharedApplication().windows.last
+    let view = loadingAnimationView()
+    window?.addSubview(view)
+    
+    view.alpha = 1.0
+    UIView.animateWithDuration(0.3) { 
+      view.alpha = 1.0
+    }
   }
   
   func stopLoadingAnimation() {
     print("stopLoadingAnimation")
+  }
+  
+  private func loadingAnimationView() -> UIView {
+    loadingView?.addSubview(animationView!)
+    backgroundView?.addSubview(loadingView!)
+    return backgroundView!
   }
   
 }
