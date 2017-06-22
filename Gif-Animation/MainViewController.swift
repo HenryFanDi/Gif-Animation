@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
     stopIt()
   }
   
-  override func viewDidAppear(animated: Bool) {
+  override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     startLoadingAnimation()
   }
@@ -32,11 +32,11 @@ class MainViewController: UIViewController {
   
   // MARK: Private
   
-  private func stopIt() {
+  fileprivate func stopIt() {
     let interval = 3.0
-    let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(interval * NSTimeInterval(NSEC_PER_SEC)))
+    let delay = DispatchTime.now() + Double(Int64(interval * TimeInterval(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
     unowned let unownedSelf = self
-    dispatch_after(delay, dispatch_get_main_queue()) { 
+    DispatchQueue.main.asyncAfter(deadline: delay) { 
       unownedSelf.stopLoadingAnimation()
     }
   }

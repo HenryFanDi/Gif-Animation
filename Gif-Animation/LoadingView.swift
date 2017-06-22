@@ -19,8 +19,8 @@ extension UIViewController {
     get {
       var view = objc_getAssociatedObject(self, &backgroundViewKey) as? UIView
       if view == nil {
-        view = UIView.init(frame: CGRectMake(0.0, 0.0, CGRectGetWidth(UIScreen.mainScreen().bounds), CGRectGetHeight(UIScreen.mainScreen().bounds)))
-        view?.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4)
+        view = UIView.init(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        view?.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         self.backgroundView = view
       }
       return view
@@ -34,9 +34,9 @@ extension UIViewController {
     get {
       var view = objc_getAssociatedObject(self, &loadingViewKey) as? UIView
       if view == nil {
-        view = UIView.init(frame: CGRectMake(0.0, 0.0, 200.0, 170.0))
+        view = UIView.init(frame: CGRect(x: 0.0, y: 0.0, width: 200.0, height: 170.0))
         view?.backgroundColor = UIColor.init(red: 38.0/255.0, green: 38.0/255.0, blue: 38.0/255.0, alpha: 1.0)
-        view?.center = CGPointMake(CGRectGetWidth(UIScreen.mainScreen().bounds) / 2.0, CGRectGetHeight(UIScreen.mainScreen().bounds) / 2.0)
+        view?.center = CGPoint(x: UIScreen.main.bounds.width / 2.0, y: UIScreen.main.bounds.height / 2.0)
         view?.layer.cornerRadius = 13.0
         self.loadingView = view
       }
@@ -51,10 +51,10 @@ extension UIViewController {
     get {
       var view = objc_getAssociatedObject(self, &animationViewKey) as? UIImageView
       if view == nil {
-        view = UIImageView(image: UIImage.animatedImageWithAnimatedGIFData(NSData.init(contentsOfFile: NSBundle.mainBundle().pathForResource("loading_animation", ofType: "gif")!)!))
-        view?.frame = CGRectMake(0.0, 0.0, 200.0, 170.0)
-        view?.backgroundColor = UIColor.clearColor()
-        view?.contentMode = UIViewContentMode.ScaleAspectFit
+        view = UIImageView(image: UIImage.animatedImage(withAnimatedGIFData: try! Data.init(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "loading_animation", ofType: "gif")!))))
+        view?.frame = CGRect(x: 0.0, y: 0.0, width: 200.0, height: 170.0)
+        view?.backgroundColor = UIColor.clear
+        view?.contentMode = UIViewContentMode.scaleAspectFit
         view?.clipsToBounds = true
         self.animationView = view
       }
@@ -67,25 +67,25 @@ extension UIViewController {
   
   func startLoadingAnimation() {
     print("startLoadingAnimation")
-    let window = UIApplication.sharedApplication().windows.last
+    let window = UIApplication.shared.windows.last
     let view = loadingAnimationView()
     window?.addSubview(view)
     
     view.alpha = 1.0
-    UIView.animateWithDuration(0.3) { 
+    UIView.animate(withDuration: 0.3, animations: { 
       view.alpha = 1.0
-    }
+    }) 
   }
   
   func stopLoadingAnimation() {
     print("stopLoadingAnimation")
     unowned let unownedSelf = self
-    UIView.animateWithDuration(0.3) {
+    UIView.animate(withDuration: 0.3, animations: {
       unownedSelf.backgroundView?.alpha = 0.0
-    }
+    }) 
   }
   
-  private func loadingAnimationView() -> UIView {
+  fileprivate func loadingAnimationView() -> UIView {
     loadingView?.addSubview(animationView!)
     backgroundView?.addSubview(loadingView!)
     return backgroundView!
